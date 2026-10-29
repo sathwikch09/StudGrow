@@ -1,0 +1,16 @@
+{
+  "short_name": "StudGrow",
+  "name": "StudGrow Adaptive Learning",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0B1020",
+  "theme_color": "#4F46E5",
+  "display": "standalone",
+  "orientation": "any"
+}
