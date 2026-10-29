@@ -1,9 +1,13 @@
-const CACHE_NAME = 'studgrow-v1';
+const CACHE_NAME = 'studgrow-v2';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/vite.svg'
+  '/icons/icon-192.png',
+  '/icons/icon-512.png',
+  '/icons/icon-maskable-512.png',
+  '/icons/apple-touch-icon.png',
+  '/icons/icon.svg'
 ];
 
 self.addEventListener('install', (event) => {
