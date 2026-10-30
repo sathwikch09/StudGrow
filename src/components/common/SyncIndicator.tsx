@@ -23,7 +23,7 @@ export const SyncIndicator: React.FC = () => {
     <button
       onClick={handleClick}
       title={isOnline ? 'Online (Click to simulate offline mode)' : 'Offline mode (Click to go online)'}
-      className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 border ${
+      className={`min-h-[44px] min-w-[44px] flex items-center justify-center gap-1.5 px-2.5 py-1.5 sm:px-3 rounded-full text-xs font-semibold transition-all duration-200 border touch-manipulation shrink-0 ${
         !isOnline
           ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/30 hover:bg-amber-500/20'
           : syncStatus === 'syncing'
@@ -35,24 +35,24 @@ export const SyncIndicator: React.FC = () => {
     >
       {!isOnline ? (
         <>
-          <WifiOff className="w-3.5 h-3.5 text-amber-500 animate-pulse" />
-          <span>{t.offline} ({pendingCount} queued)</span>
+          <WifiOff className="w-4 h-4 text-amber-500 animate-pulse shrink-0" />
+          <span className="hidden sm:inline">{t.offline} ({pendingCount})</span>
         </>
       ) : syncStatus === 'syncing' ? (
         <>
-          <RefreshCw className="w-3.5 h-3.5 animate-spin text-indigo-500" />
-          <span>{t.syncing}</span>
+          <RefreshCw className="w-4 h-4 animate-spin text-indigo-500 shrink-0" />
+          <span className="hidden sm:inline">{t.syncing}</span>
         </>
       ) : syncStatus === 'error' ? (
         <>
-          <AlertCircle className="w-3.5 h-3.5 text-red-500" />
-          <span>{t.retry}</span>
+          <AlertCircle className="w-4 h-4 text-red-500 shrink-0" />
+          <span className="hidden sm:inline">{t.retry}</span>
         </>
       ) : (
         <>
-          <Wifi className="w-3.5 h-3.5 text-emerald-500" />
-          <span>{t.synced}</span>
-          <CheckCircle2 className="w-3 h-3 text-emerald-500" />
+          <Wifi className="w-4 h-4 text-emerald-500 shrink-0" />
+          <span className="hidden sm:inline">{t.synced}</span>
+          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0 hidden sm:inline" />
         </>
       )}
     </button>

@@ -41,12 +41,12 @@ export const SubjectsPage: React.FC = () => {
         </div>
 
         {/* Grade Selector */}
-        <div className="flex items-center gap-1.5 p-1 rounded-2xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
+        <div className="flex items-center gap-1.5 p-1 rounded-2xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 overflow-x-auto horizontal-scroll-row touch-pan-x">
           {[6, 7, 8, 9, 10].map((grade) => (
             <button
               key={grade}
               onClick={() => setSelectedGrade(grade)}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
+              className={`min-h-[44px] px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all touch-manipulation shrink-0 ${
                 selectedGrade === grade
                   ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
                   : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
@@ -59,7 +59,7 @@ export const SubjectsPage: React.FC = () => {
       </div>
 
       {/* Subject Tabs */}
-      <div className="flex gap-2.5 overflow-x-auto pb-2 scrollbar-none">
+      <div className="flex gap-2.5 overflow-x-auto pb-2 scrollbar-none horizontal-scroll-row touch-pan-x snap-x">
         {MOCK_SUBJECTS.map((s) => {
           const isSelected = s.id === activeSubject.id;
           return (
@@ -71,7 +71,7 @@ export const SubjectsPage: React.FC = () => {
                   setExpandedChapterId(s.chapters[0].id);
                 }
               }}
-              className={`flex items-center gap-2.5 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all shrink-0 border ${
+              className={`min-h-[44px] flex items-center gap-2.5 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all shrink-0 border snap-start touch-manipulation ${
                 isSelected
                   ? 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-indigo-500/50 shadow-md ring-2 ring-indigo-500/20'
                   : 'bg-white/60 dark:bg-slate-900/40 text-slate-500 dark:text-slate-400 border-slate-200 dark:border-slate-800 hover:bg-white'

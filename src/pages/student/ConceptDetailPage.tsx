@@ -108,7 +108,7 @@ export const ConceptDetailPage: React.FC = () => {
       </div>
 
       {/* Explanation Modes Tabs */}
-      <div className="flex border-b border-slate-200 dark:border-slate-800 gap-2 px-2">
+      <div className="flex border-b border-slate-200 dark:border-slate-800 gap-2 px-2 overflow-x-auto horizontal-scroll-row touch-pan-x snap-x scrollbar-none">
         {[
           { key: 'basic', label: '1. Basic Concept', icon: BookOpen },
           { key: 'detailed', label: '2. Detailed Theory', icon: Layers },
@@ -124,7 +124,7 @@ export const ConceptDetailPage: React.FC = () => {
                 setActiveTab(tab.key as any);
                 setIsSimplerMode(false);
               }}
-              className={`flex items-center gap-2 py-3 px-4 text-xs font-bold border-b-2 transition-all ${
+              className={`min-h-[44px] shrink-0 snap-start touch-manipulation flex items-center gap-2 py-3 px-4 text-xs font-bold border-b-2 transition-all ${
                 isActive && !isSimplerMode
                   ? 'border-indigo-600 text-indigo-600 dark:text-indigo-400'
                   : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-300'

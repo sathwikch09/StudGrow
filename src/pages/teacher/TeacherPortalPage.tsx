@@ -20,7 +20,7 @@ export const TeacherPortalPage: React.FC = () => {
   return (
     <div className="w-full space-y-6 select-none animate-fade-in pb-12">
       {/* Top Teacher Tabs Bar */}
-      <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none border-b border-slate-200 dark:border-slate-800">
+      <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none border-b border-slate-200 dark:border-slate-800 horizontal-scroll-row touch-pan-x snap-x">
         {[
           { to: '/teacher', label: 'Class Overview', icon: LayoutDashboard, end: true },
           { to: '/teacher/heatmap', label: 'Concept Heatmap & Overrides', icon: BarChart3 },
@@ -36,7 +36,7 @@ export const TeacherPortalPage: React.FC = () => {
               to={tab.to}
               end={tab.end}
               className={({ isActive }) =>
-                `flex items-center gap-2 py-3 px-3.5 text-xs font-bold border-b-2 transition-all shrink-0 ${
+                `min-h-[44px] flex items-center gap-2 py-2.5 px-3.5 text-xs font-bold border-b-2 transition-all shrink-0 snap-start touch-manipulation ${
                   isActive
                     ? 'border-indigo-600 text-indigo-600 dark:text-indigo-400 font-extrabold'
                     : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-300'

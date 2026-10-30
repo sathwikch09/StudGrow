@@ -34,6 +34,7 @@ interface AppState {
   dyslexiaFont: boolean;
   language: Language;
   sidebarCollapsed: boolean;
+  mobileMenuOpen: boolean;
   activeProfileDrawer: string | null;
   activeStudentDrawerId: string | null;
   globalSearchOpen: boolean;
@@ -54,6 +55,8 @@ interface AppState {
   setLanguage: (lang: Language) => void;
   toggleSidebar: () => void;
   setSidebarCollapsed: (collapsed: boolean) => void;
+  setMobileMenuOpen: (open: boolean) => void;
+  toggleMobileMenu: () => void;
   openProfileDrawer: (drawerName: string) => void;
   closeProfileDrawer: () => void;
   openStudentDrawer: (studentId: string) => void;
@@ -89,6 +92,7 @@ export const useAppStore = create<AppState>((set, get) => {
     dyslexiaFont: savedDyslexia,
     language: savedLang,
     sidebarCollapsed: false,
+    mobileMenuOpen: false,
     activeProfileDrawer: null,
     activeStudentDrawerId: null,
     globalSearchOpen: false,
@@ -170,6 +174,14 @@ export const useAppStore = create<AppState>((set, get) => {
 
     setSidebarCollapsed: (collapsed) => {
       set({ sidebarCollapsed: collapsed });
+    },
+
+    setMobileMenuOpen: (open) => {
+      set({ mobileMenuOpen: open });
+    },
+
+    toggleMobileMenu: () => {
+      set({ mobileMenuOpen: !get().mobileMenuOpen });
     },
 
     openProfileDrawer: (drawerName) => {

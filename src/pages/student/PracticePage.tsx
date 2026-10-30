@@ -219,7 +219,7 @@ export const PracticePage: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex items-center gap-3 font-mono font-bold">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 font-mono font-bold">
             {/* Streak Counter */}
             <div className="flex items-center gap-1.5 px-3 py-1 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400">
               <Flame className="w-3.5 h-3.5 fill-current animate-pulse text-amber-500" />
@@ -238,7 +238,7 @@ export const PracticePage: React.FC = () => {
             {/* Why This Next Pill */}
             <button
               onClick={() => setWhyModalOpen(true)}
-              className="flex items-center gap-1 px-2.5 py-1 rounded-xl bg-violet-500/10 text-violet-600 dark:text-violet-400 hover:bg-violet-500/20 text-xs"
+              className="min-h-[44px] flex items-center gap-1 px-3 py-1.5 rounded-xl bg-violet-500/10 text-violet-600 dark:text-violet-400 hover:bg-violet-500/20 text-xs touch-manipulation"
               title="Click to understand why this question was selected"
             >
               <BrainCircuit className="w-3.5 h-3.5" />

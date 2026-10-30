@@ -10,10 +10,43 @@
   html, body {
     margin: 0;
     padding: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    width: 100%;
+    min-height: 100dvh;
+    overflow-x: hidden;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    html, body {
+      height: 100vh;
+      overflow: hidden;
+    }
+  }
+
+  button, [role="button"], a, input, select, textarea {
+    touch-action: manipulation;
+  }
+
+  /* Smooth touch scrolling areas */
+  .main-scroll-area {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+  }
+
+  /* Horizontal swipeable tabs and chip rows */
+  .horizontal-scroll-row {
+    display: flex;
+    overflow-x: auto;
+    touch-action: pan-x;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .horizontal-scroll-row::-webkit-scrollbar {
+    display: none;
   }
 
   h1, h2, h3, h4, h5, h6 {
